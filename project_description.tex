@@ -6,7 +6,7 @@
 \usepackage[font=small]{caption} % Without options this makes it so the stray : is removed for figures with empty captions.
 % \graphicspath{{./figures/}}
 
-\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref}
 \bibliographystyle{alpha}
 
 
@@ -61,7 +61,7 @@
 \vspace{1cm}
 
 \section*{Overview}
-This project asks what types of functions can appear in (well behaved) \emph{representations of Lie superalgebras}.
+This project asks what types of functions can appear in (certain well behaved) \emph{representations of quantised enveloping algebras of Lie superalgebras}.
 Specifically, do these functions have strong enough recursive behavior to qualify as \emph{q-holonomic functions}?
 
 We're motivated by the fact that these representations can be used to make quantum knot invariants, whose q-holonomicity is closely linked to the role they play in physics.
@@ -74,6 +74,14 @@ Lie superalgebras are particularly interesting because they appear in recent con
     \begin{itemize}
       \item The classic references are \cite{Kac1977,Kac_1978}.
       \item For a textbook, see \cite{Musson_2012}.
+    \end{itemize}
+  \item[The Quantum Group $U_h\mathfrak{sl}(n|m)$] - we will focus on representations that come from those of $\mathfrak{sl}(n|m)$, but need the \emph{quantum Serre relations} involving $q = e^{h/2}$ that appear in the quantisation in order to get interesting $q$-holonomic functions.
+    \begin{itemize}
+      \item Introduced in \cite{Yamane_1994}, see especially Theorem 10.5.1 for a presentation.
+      \item See also \cite{Geer_2006}, and \cite[\S 3.3]{Geer_2007} for some more brief treatments.
+      \item A textbook for the non-super case is \cite{Lusztig_2010}.
+      \item See \cite[Theorem 1.2]{Geer_2007} for the relationship between $\mathfrak{sl}(n|m)$ and $U_h \mathfrak{sl}(n|m)$ representations.
+      \item For a in depth look at $\mathfrak{sl}(2|1)$, see \cite{Brown_Geer_2024}.
     \end{itemize}
 
   \item[q-Holonomic Systems:]
@@ -89,7 +97,7 @@ Lie superalgebras are particularly interesting because they appear in recent con
 \section*{Details}
 
 We will focus on \emph{typical representations} of the classical lie superalgebra $\mathfrak{sl}(n|m)$, where $n \neq m$.
-These are classified up to isomorphism by a tuple of complex parameters $(a_1,\ldots,a_{m+n+1})$ which must satisfy the following set of linear inequalities:
+These have standard deformations to $U_h\mathfrak{sl}(n|m)$ representations and are classified up to isomorphism by a tuple of complex parameters $(a_1,\ldots,a_{m+n+1})$ which must satisfy the following set of linear inequalities:
 \begin{equation}
   a_{m+1} \neq \sum_{k=m+2}^j a_k - \sum_{\ell = 1}^m a_\ell -2m - 2 + i + j
 \end{equation}
@@ -99,8 +107,10 @@ The parameters $a_k$ are called the \emph{weights} of the associated representat
 \begin{equation}
     h_k v = a_k v, \quad\text{ and }\quad E_k v = 0  \quad\text{for } k = 1,\ldots,m+n+1.
 \end{equation}
+
+\section*{Process:}
 \begin{itemize}
-  \item We want to describe these representations in terms of explicit matrices (which will depend on the parameters $a_k$.)
+  \item We want to describe the associated $U_h\mathfrak{sl}(n|m)$-representations in terms of explicit matrices (which will depend on the parameters $n,m$ and $a_k$.)
   \item Then we want to prove that the coefficients of those matrices are q-holonomic functions.
   \item We'd like to also understand if the $R$-matrix has q-holonomic coefficients.
 \end{itemize}
